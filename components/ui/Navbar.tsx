@@ -19,7 +19,7 @@ export const Navbar = () => {
                
             <Box flex={1} />
 
-           
+           <Box sx={{display: {xs:'none', sm:'block'}}}>
                 <NextLink href='category/men' passHref>
                     <Link>
                         <Button>Hombres</Button>
@@ -37,7 +37,7 @@ export const Navbar = () => {
                         <Button>Chinos</Button>
                     </Link>
                     </NextLink>
-            
+            </Box>
             
              <Box flex={1} />
 
