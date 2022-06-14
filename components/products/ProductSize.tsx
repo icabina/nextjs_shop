@@ -1,24 +1,31 @@
-import { Box, Button } from "@mui/material";
-import { FC } from "react"
-import { ISize } from "../../interfaces/products";
+import { FC } from 'react';
+import { Box, Button } from '@mui/material';
+import { ISize } from '../../interfaces';
 
-interface Props{
+
+interface Props {
     selectedSize?: ISize;
     sizes: ISize[];
+
+    // Method
+    onSelectedSize: (size: ISize ) => void;
 }
-export const ProductSize:FC<Props> = ({selectedSize, sizes}) => {
+
+
+export const ProductSize: FC<Props> = ({selectedSize, sizes, onSelectedSize }) => {
   return (
-    <Box sx={{mb: 3}}>
+    <Box>
         {
-        sizes.map(size =>(
-            <Button 
-            key={size}
-            size='small'
-            color={selectedSize === size ? 'secondary' : 'info'}>
-                {size}
-           
-            </Button>
-        ))
+            sizes.map( size => (
+                <Button
+                    key={ size }
+                    size='small'
+                    color={ selectedSize === size ? 'primary' : 'info' }
+                    onClick={ () => onSelectedSize( size ) }
+                >
+                    { size }
+                </Button>
+            ))
         }
     </Box>
   )
