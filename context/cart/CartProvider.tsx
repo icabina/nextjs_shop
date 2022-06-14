@@ -30,6 +30,7 @@ export const CartProvider:FC<Props> = ({ children }) => {
     const [state, dispatch] = useReducer( cartReducer , CART_INITIAL_STATE );
 
     // Efecto
+    //LEER EL CART CON EL COOKIE
     useEffect(() => {
         try {
             const cookieProducts = Cookie.get('cart') ? JSON.parse( Cookie.get('cart')! ): []

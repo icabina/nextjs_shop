@@ -14,6 +14,7 @@ interface Props {
 export const ItemCounter:FC<Props> = ({ currentValue, updatedQuantity, maxValue }) => {
 
   const addOrRemove = ( value: number ) => {
+    console.log(value)
     if ( value === -1 ) {
       if ( currentValue === 1 ) return;
 
