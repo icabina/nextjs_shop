@@ -1,4 +1,4 @@
-import { UiState } from './UiProvider';
+import { UiState } from './';
 
 
 type UiActionType = 

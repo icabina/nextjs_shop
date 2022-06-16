@@ -49,8 +49,6 @@ const SearchPage: NextPage<Props> = ({ products, foundProducts, query }) => {
 // - Only if you need to pre-render a page whose data must be fetched at request time
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     
-    //desestructuro el query de params, con valor inicial vacìo, es de tipo string
-
     const { query = '' } = params as { query: string };
 
     if ( query.length === 0 ) {
@@ -64,7 +62,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
     // y no hay productos
     let products = await dbProducts.getProductsByTerm( query );
-    
     const foundProducts = products.length > 0;
 
     // TODO: retornar otros productos

@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     >
       <CartProvider>
 
-        <UiProvider isMenuOpen={false}>
+        <UiProvider>
           <ThemeProvider theme={ lightTheme}>
               <CssBaseline />
               <Component {...pageProps} />

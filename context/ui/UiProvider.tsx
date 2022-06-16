@@ -3,7 +3,6 @@ import { UiContext, uiReducer } from './';
 
 export interface UiState {
     isMenuOpen: boolean;
-    children?: JSX.Element
 }
 
 
@@ -12,7 +11,7 @@ const UI_INITIAL_STATE: UiState = {
 }
 
 
-export const UiProvider:FC<UiState> = ({ children }) => {
+export const UiProvider:FC = ({ children }) => {
 
     const [state, dispatch] = useReducer( uiReducer , UI_INITIAL_STATE );
 

@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 
 import { Typography, Grid, Chip, Link } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-//https://mui.com/x/react-data-grid/getting-started/#main-content
+
 import { ShopLayout } from '../../components/layouts';
 
 

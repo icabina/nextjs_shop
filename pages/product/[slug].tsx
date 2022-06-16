@@ -7,7 +7,7 @@ import { Box, Button, Chip, Grid, Typography } from '@mui/material';
 import { CartContext } from '../../context/cart/CartContext';
 
 import { ShopLayout } from '../../components/layouts';
-import { ProductSlideShow, ProductSize } from '../../components/products';
+import { ProductSlideshow, SizeSelector } from '../../components/products';
 import { ItemCounter } from '../../components/ui/ItemCounter';
 
 import { dbProducts } from '../../database';
@@ -66,7 +66,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
       <Grid container spacing={3}>
 
         <Grid item xs={12} sm={ 7 }>
-          <ProductSlideShow 
+          <ProductSlideshow 
             images={ product.images }
           />
         </Grid>
@@ -86,7 +86,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
                 updatedQuantity={ onUpdateQuantity  }
                 maxValue={ product.inStock > 10 ? 10: product.inStock }
               />
-              <ProductSize 
+              <SizeSelector 
                 // selectedSize={ product.sizes[2] } 
                 sizes={ product.sizes }
                 selectedSize={ tempCartProduct.size }

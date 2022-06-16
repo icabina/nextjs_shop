@@ -15,10 +15,7 @@ export const SideMenu = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const onSearchTerm = () => {
-        //si no hay nada escrito
         if( searchTerm.trim().length === 0 ) return;
-
-        //si hay valor
         navigateTo(`/search/${ searchTerm }`);
     }
 

@@ -56,3 +56,5 @@ export const getAllProducts = async(): Promise<IProduct[]> => {
 
     return JSON.parse( JSON.stringify( products ) );
 }
+
+

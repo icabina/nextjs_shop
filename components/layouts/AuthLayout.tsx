@@ -4,13 +4,12 @@ import { Box } from '@mui/material';
 
 interface Props {
     title: string;
-    children: JSX.Element
 }
 
 export const AuthLayout: FC<Props> = ({ children, title  }) => {
   return (
     <>
-        <Head> {/* from next/Head */}
+        <Head>
             <title>{ title }</title>
         </Head>
 

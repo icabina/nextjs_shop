@@ -1,4 +1,4 @@
-import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document'
+import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -15,7 +15,6 @@ class MyDocument extends Document {
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
                     />
-
                 </Head>
                 <body>
                     <Main />
@@ -26,4 +25,4 @@ class MyDocument extends Document {
     }
 }
 
-export default MyDocument
+export default MyDocument;

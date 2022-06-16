@@ -10,9 +10,11 @@ export interface IProduct {
     title: string;
     type: IType;
     gender: 'men'|'women'|'kid'|'unisex'
-//TODO
+
+    // TODO: agregar createdAt y updatedAt
     createdAt: string;
     updatedAt: string;
+
 }
 
 export type ISize = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';

@@ -1,4 +1,3 @@
-//nextapi snippet
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { db, seedDatabase } from '../../database';
 import { Product } from '../../models';

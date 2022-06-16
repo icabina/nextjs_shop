@@ -22,7 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
     
 }
-//http://localhost:3000/api/search/query
+
 const searchProducts = async(req: NextApiRequest, res: NextApiResponse<Data>) => {
     
     let { q = '' } = req.query;

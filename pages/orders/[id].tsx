@@ -29,7 +29,7 @@ const OrderPage = () => {
 
         <Grid container>
             <Grid item xs={ 12 } sm={ 7 }>
-                <CartList editable={false} />
+                <CartList />
             </Grid>
             <Grid item xs={ 12 } sm={ 5 }>
                 <Card className='summary-card'>
