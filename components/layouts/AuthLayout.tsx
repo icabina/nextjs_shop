@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 
 interface Props {
     title: string;
-    children?: JSX.Element;
+    children?: JSX.Element
 }
 
 export const AuthLayout: FC<Props> = ({ children, title  }) => {

@@ -19,10 +19,8 @@ const AUTH_INITIAL_STATE: AuthState = {
     user: undefined,
 }
 
-interface Props {
-    children?: JSX.Element
-}
-export const AuthProvider:FC<Props> = ({ children }) => {
+
+export const AuthProvider:FC = ({ children }) => {
 
     const [state, dispatch] = useReducer( authReducer, AUTH_INITIAL_STATE );
     const router = useRouter();
@@ -78,7 +76,7 @@ export const AuthProvider:FC<Props> = ({ children }) => {
             if ( axios.isAxiosError(error) ) {
                 return {
                     hasError: true,
-                    // message: error.response?.data.message
+                    message: error.response?.data.message
                 }
             }
 
@@ -93,7 +91,7 @@ export const AuthProvider:FC<Props> = ({ children }) => {
     const logout = () => {
         Cookies.remove('token');
         Cookies.remove('cart');
-        router.reload();  //refresh the App, erases State
+        router.reload();
     }
 
 

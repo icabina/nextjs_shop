@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-//convert JWT to promises, not default callback
+
 export const signToken = ( _id: string, email: string ) => {
 
     if ( !process.env.JWT_SECRET_SEED ) {
@@ -27,6 +27,10 @@ export const isValidToken = ( token: string ):Promise<string> => {
         throw new Error('No hay semilla de JWT - Revisar variables de entorno');
     }
 
+    if ( token.length <= 10 ) {
+        return Promise.reject('JWT no es válido');
+    }
+
     return new Promise( (resolve, reject) => {
 
         try {
@@ -46,3 +50,4 @@ export const isValidToken = ( token: string ):Promise<string> => {
     })
 
 }
+

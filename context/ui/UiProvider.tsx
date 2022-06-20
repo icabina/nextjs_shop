@@ -11,10 +11,7 @@ const UI_INITIAL_STATE: UiState = {
 }
 
 
-interface Props{
-    children?: JSX.Element
-}
-export const UiProvider:FC<Props> = ({ children }) => {
+export const UiProvider:FC = ({ children }) => {
 
     const [state, dispatch] = useReducer( uiReducer , UI_INITIAL_STATE );
 
