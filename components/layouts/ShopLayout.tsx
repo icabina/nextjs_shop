@@ -8,7 +8,7 @@ interface Props {
     title: string;
     pageDescription: string;
     imageFullUrl?: string;
-    children?: JSX.Element;
+    children?: JSX.Element
 }
 
 export const ShopLayout:FC<Props> = ({ children, title, pageDescription, imageFullUrl }) => {

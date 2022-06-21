@@ -37,9 +37,11 @@ const CART_INITIAL_STATE: CartState = {
     total: 0,
     shippingAddress: undefined
 }
+interface Props{
+    children?: JSX.Element
+}
 
-
-export const CartProvider:FC = ({ children }) => {
+export const CartProvider:FC<Props> = ({ children }) => {
 
     const [state, dispatch] = useReducer( cartReducer , CART_INITIAL_STATE );
 
