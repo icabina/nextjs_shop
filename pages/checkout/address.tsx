@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from "@mui/material";
 import Cookies from 'js-cookie';
 import { useForm } from "react-hook-form";
-
+import Cookie from 'js-cookie';
 import { ShopLayout } from '../../components/layouts';
 import { countries } from "../../utils";
 import { CartContext } from '../../context';
@@ -37,7 +37,7 @@ const getAddressFromCookies = ():FormData => {
 
 
 const AddressPage = () => {
-
+    console.log("cookies from address...", Cookie.get('cart') )
     const router = useRouter();
     const { updateAddress} = useContext( CartContext );
 

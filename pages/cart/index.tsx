@@ -21,8 +21,12 @@ const CartPage = () => {
         return (<></>);
     }
 
+    const onclick = () =>{
+        router.push('/checkout/address');
+    }
     return (
         <ShopLayout title='Carrito - 3' pageDescription={'Carrito de compras de la tienda'}>
+            <>
             <Typography variant='h1' component='h1'>Carrito</Typography>
 
             <Grid container>
@@ -42,7 +46,8 @@ const CartPage = () => {
                                     color="secondary"
                                     className='circular-btn' 
                                     fullWidth
-                                    href='/checkout/address'
+                                    // href='/checkout/address'
+                                    onClick={onclick}
                                 >
                                     Checkout
                                 </Button>
@@ -52,7 +57,7 @@ const CartPage = () => {
                     </Card>
                 </Grid>
             </Grid>
-
+            </>
 
         </ShopLayout>
     )
