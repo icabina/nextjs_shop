@@ -38,29 +38,17 @@ export const CartProvider:FC<Props> = ({ children }) => {
 
     const [state, dispatch] = useReducer( cartReducer , CART_INITIAL_STATE );
 
-
-    
-    
-    
-    
     // Efecto
     useEffect(() => {
         try {
             const cookieProducts = Cookie.get('cart') ? JSON.parse( Cookie.get('cart')! ): []
-            console.log('cookieProducts', cookieProducts);
             dispatch({ type: '[Cart] - LoadCart from cookies | storage', payload: cookieProducts });
-            
         } catch (error) {
             dispatch({ type: '[Cart] - LoadCart from cookies | storage', payload: [] });
         }
     }, []);
-    
-    // useEffect(() => {
-    //     const previousCart = state.cart;
-    //     console.log('previousCart', previousCart);
-    //     Cookie.set('cart', JSON.stringify( state.cart ));
-    //   }, [state.cart]);
-    
+
+
     useEffect(() => {
 
         if ( Cookie.get('firstName')){
@@ -82,7 +70,9 @@ export const CartProvider:FC<Props> = ({ children }) => {
 
 
     
-  
+    useEffect(() => {
+      Cookie.set('cart', JSON.stringify( state.cart ));
+    }, [state.cart]);
 
 
     useEffect(() => {
@@ -187,11 +177,15 @@ export const CartProvider:FC<Props> = ({ children }) => {
 
 
         } catch (error) {
+            interface AxiosError{
+                hasError: boolean,
+                message: any
+            }
             if ( axios.isAxiosError(error) ) {
                 return {
                     hasError: true,
-                    message: error.response?.data.message
-                }
+                    message: error.message
+                } as AxiosError
             }
             return {
                 hasError: true,
