@@ -354,7 +354,7 @@ const ProductAdminPage:FC<Props> = ({ product }) => {
                                 ref={ fileInputRef }
                                 type="file"
                                 multiple
-                                accept='image/png, image/gif, image/jpeg'
+                                accept='image/png, image/gif, image/jpeg, , image/jpg'
                                 style={{ display: 'none' }}
                                 onChange={ onFilesSelected }
                             />

@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { isValidObjectId } from 'mongoose';
 
-// import { v2 as cloudinary } from 'cloudinary';
-// cloudinary.config( process.env.CLOUDINARY_URL || '' );
+import { v2 as cloudinary } from 'cloudinary';
+cloudinary.config( process.env.CLOUDINARY_URL || '' );
 
 import { db } from '../../../database';
 import { IProduct } from '../../../interfaces/products';
@@ -88,11 +88,11 @@ const updateProduct = async(req: NextApiRequest, res: NextApiResponse<Data>) => 
                 // Borrar de cloudinary
                 const [ fileId, extension ] = image.substring( image.lastIndexOf('/') + 1 ).split('.')
                 console.log({ image, fileId, extension });
-                // await cloudinary.uploader.destroy( fileId );
+                await cloudinary.uploader.destroy( fileId );
             }
         });
 
-        await product.update( req.body );
+        await product.updateOne( req.body );
         await db.disconnect();
         
 
